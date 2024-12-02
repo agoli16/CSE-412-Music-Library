@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage - MusicLibrary</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>MusicLibrary</h1>
+        <nav>
+            <a href="#" class="logout-btn">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <div class="search-container">
+            <form method="GET" action="/search">
+                <input type="text" name="query" placeholder="Search for songs or artists" class="search-bar">
+                <button type="submit" class="btn">Search</button>
+            </form>
+        </div>
+        <div class="buttons-container">
+            <button onclick="window.location.href='/favorites'" class="btn">Favorites</button>
+        </div>
+        <section class="featured-songs">
+            <h2>Featured Songs</h2>
+            <div class="songs-list">
+                {% for song in songs %}
+                <div class="song-card">
+                    <h3>{{ song.title }}</h3>
+                    <p>by {{ song.artist }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</body>
+</html>

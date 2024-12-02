@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicLibrary - Song</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Song Details</h1>
+        <nav>
+            <a href="/homepage" class="nav-link">Home</a>
+        </nav>
+    </header>
+    <main>
+        <h2>{{ song.title }}</h2>
+        <p><strong>Genre:</strong> {{ song.genre }}</p>
+        <p><strong>Year Released:</strong> {{ song.year_released }}</p>
+        <p><strong>Streams:</strong> {{ song.streams }}</p>
+        <p><strong>Favorites:</strong> {{ song.num_favorites }}</p>
+        <p><strong>Duration:</strong> {{ song.duration }}</p>
+        <p><strong>Lyrics:</strong> {{ song.lyrics }}</p>
+        <p><strong>Artist:</strong> {{ song.artist }}</p>
+        <form action="/add_favorite" method="POST">
+            <input type="hidden" name="song_id" value="{{ song.song_id }}">
+            <button type="submit" class="btn">Add to Favorites</button>
+        </form>
+    </main>
+</body>
+</html>

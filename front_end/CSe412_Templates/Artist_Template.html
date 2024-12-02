@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist - MusicLibrary</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>MusicLibrary</h1>
+        <nav>
+            <a href="homepage.html" class="home-link">Home</a>
+        </nav>        
+    </header>
+    <main>
+        <section class="artist-details">
+            <h2>Artist Details</h2>
+            <p><strong>Name:</strong> {{ artist.name }}</p>
+            <p><strong>Total Streams:</strong> {{ artist.total_streams }}</p>
+            <p><strong>Total Songs:</strong> {{ artist.total_songs }}</p>
+            <p><strong>Total Albums:</strong> {{ artist.total_albums }}</p>
+            <p><strong>Followers:</strong> {{ artist.num_followers }}</p>
+        </section>
+    </main>
+</body>
+</html>
