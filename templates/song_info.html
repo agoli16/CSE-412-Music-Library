@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Info - MusicLibrary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        header a:hover {
+            color: #ffcccb;
+        }
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .container h1 {
+            text-align: left;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        .info {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        .info p {
+            margin: 0;
+            font-size: 16px;
+        }
+        .info p strong {
+            font-weight: bold;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MusicLibrary</h1>
+        <a href="/home">Home</a>
+    </header>
+
+    <div class="container">
+        <h1>Song Information</h1>
+        <div class="info">
+            <p><strong>Title:</strong></p>
+            <p>{{ song[0] }}</p>
+            <p><strong>Artist:</strong></p>
+            <p>{{ song[1] }}</p>
+            <p><strong>Genre:</strong></p>
+            <p>{{ song[2] }}</p>
+            <p><strong>Year Released:</strong></p>
+            <p>{{ song[3] }}</p>
+            <p><strong>Streams:</strong></p>
+            <p>{{ song[4] }}</p>
+            <p><strong>Favourites:</strong></p>
+            <p>{{ song[5] }}</p>
+            <p><strong>Duration:</strong></p>
+            <p>{{ song[6] }}</p>
+            <p><strong>First Line of Lyrics:</strong></p>
+            <p>{{ song[7] }}</p>
+        </div>
+        <div class="button-container">
+            <form action="/add_favourite" method="POST">
+                <input type="hidden" name="song_id" value="{{ song_id }}">
+                <button type="submit">❤ Add to Favourites</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
